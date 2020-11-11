@@ -1,0 +1,16 @@
+//判断1000年---2000年之间的闰年
+#include <stdio.h>
+int main()
+{
+    int i=0;
+    printf("判断1000年---2000年之间的闰年:\n");
+    scanf("%d",&i);
+    if (i>=1000&&i<=2000)
+            {if(i%4==0)
+            printf("%d是闰年\n",i);
+            else 
+            printf("%d不是闰年\n",i);
+            }
+    else printf("你输入的年份不在范围内");
+    return 0;
+}
