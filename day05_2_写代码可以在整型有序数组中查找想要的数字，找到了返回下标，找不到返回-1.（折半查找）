@@ -1,0 +1,109 @@
+//写代码可以在整型有序数组中查找想要的数字，
+
+//找到了返回下标，找不到返回-1.（折半查找）
+
+
+//二分查找也称折半查找（Binary Search），它是一种效率较高的查找方法。但是，折半查找要求线性表必须采用顺序存储结构，而且表中元素按关键字有序排列
+
+//一般而言，对于包含n个元素的列表，用二分查找最多需要logn步，而简单查找最多需要n步
+
+
+//只对半分了一次，多次不会
+
+#include<stdio.h>
+
+int main()
+
+{
+
+    int begin,mid,after,n,i,size;
+
+    int arr[1000]={0};
+
+    printf("这个程序可以在整型有序数组中查找想要的数字，\n找到了返回下标，找不到返回-1.（折半查找）\n");
+
+    printf("请输入数组的开始数字(小于结束数字)：");
+
+    scanf("%d",&begin);
+
+    printf("请输入数组的结束数字：");
+
+    scanf("%d",&after);
+
+    printf("请输入寻找的数字：");
+
+    scanf("%d",&n);    
+
+
+    if(n<begin||n>after)
+
+    {printf("下标是：-1");
+
+    return 0;}
+
+
+    size=after-begin;
+
+    mid=(after-begin+1)/2;
+
+
+    for(i=0;i<size;i++)
+
+    {
+
+        arr[i]=begin+i;
+
+    }
+
+
+    if(arr[mid]==n)
+
+        printf("下标是：%d",mid);
+
+    else if (arr[mid]<n)
+
+    {
+
+        while(1)
+
+        {
+
+            mid+=1;
+
+            if(arr[mid]==n)
+
+            break;
+
+        }
+
+            printf("下标是：%d",mid);
+
+    }
+
+    else if(arr[mid]>n)
+
+    {
+
+        while(1)
+
+        {
+
+            mid-=1;
+
+            if(arr[mid]==n)
+
+            break;
+
+        }
+
+            printf("下标是：%d",mid);
+
+    }
+
+    
+
+
+
+    return 0;
+
+}
