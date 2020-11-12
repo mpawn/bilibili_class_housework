@@ -1,0 +1,101 @@
+//完成猜数字游戏
+
+//生成一个随机数a
+
+// rand()
+
+// 会返回一个0至RAND_MAX之间的随机数值，
+
+// RAND_MAX的值与int位数有关，最小是32767。
+
+// 不过rand()是一次性的，因为系统默认的随机数种子为1，
+
+// 只要随机数种子不变，其生成的随机数序列就不会改变。
+
+
+// srand()
+
+// 可用来设置rand()产生随机数时的随机数种子。
+
+// 通过设置不同的种子，我们可以获取不同的随机数序列。
+
+// 一般情况我们会使用srand((unsigned int)(time(NULL))的方法，
+
+// 利用系统时钟，产生不同的随机数种子。需要调用time()，加入头文件< ctime >。
+
+
+// 获取指定范围的随机数：
+
+// 获取一定范围的随机数，其实也就是对rand()得到的随机数，求余操作。
+
+// 取得[0,x)的随机整数：rand()%x；
+
+// 取得[0,x]的随机整数：rand()%(x+1)；
+
+// 取得[a,b)的随机整数：rand()%(b-a)+a；
+
+// 取得(a,b]的随机整数：rand()%(b-a)+a+1；
+
+// 取得[a,b]的随机整数：rand()%(b-a+1)+a；
+
+// 取得0-1之间的浮点数：rand()/double(RAND_MAX)。
+
+
+
+#include<stdio.h>
+
+#include<stdlib.h>
+
+#include<time.h>
+
+
+int main()
+
+{
+
+    int a,b;
+
+//生成一个随机数
+
+    srand((unsigned)time(NULL));
+
+    a = rand();
+
+
+    printf("让我们来玩猜数字游戏吧！请输入一个数字：");
+
+    scanf("%d",&b);
+
+
+    while(1)
+
+    {
+
+        if(a==b)
+
+            {printf("你猜对了");
+
+            break;}
+
+        else if(a<=b)
+
+            {printf("你猜的数大了，请重新输入一个数字：");
+
+            scanf("%d",&b);}
+
+        else 
+
+            {printf("你猜的数小了，请重新输入一个数字：");
+
+            scanf("%d",&b);}
+
+    }
+
+
+    return 0;
+
+}
+
+//出现 Error #include nested too deeply 原因是：头文件相互包含。
+
+
