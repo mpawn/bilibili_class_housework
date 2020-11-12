@@ -1,0 +1,77 @@
+// 将数组A中的内容和数组B中的内容进行交换。（数组一样大）
+
+#include <stdio.h>
+int main()
+{
+    int i,sum,a;
+    int A[100]={0};//[里面不能为空，不然默认数组长度为1]
+    int B[100]={0};
+    int arr[100]={0};
+    printf("将数组A中的内容和数组B中的内容进行交换。（数组一样大）\n");
+    printf("请输入数组长度：");
+    scanf("%d",&sum);
+
+    printf("请输入A数组：\n");
+
+    for(i=0;i<sum;i++)
+    {
+        scanf("%d",&a);
+        A[i]=a;
+    }
+
+    printf("请输入B数组：\n");
+
+    for(i=0;i<sum;i++)
+    {
+        scanf("%d",&a);
+        B[i]=a;
+    }
+
+    //交换A和B
+    for(i=0;i<sum;i++)
+    {
+        arr[i]=A[i];
+    }
+
+    for(i=0;i<sum;i++)
+    {
+        A[i]=B[i];
+    }
+
+    for(i=0;i<sum;i++)
+    {
+        B[i]=arr[i];
+    }
+
+//打印数组A和B
+    printf("交换后的数组A为：\n");
+    for(i=0;i<sum;i++)
+    {
+        printf("%d ",A[i]);
+    }
+
+    printf("\n交换后的数组B为：\n");
+    for(i=0;i<sum;i++)
+    {
+        printf("%d ",B[i]);
+    }
+
+
+    return 0;
+}
+
+// #include <stdio.h>
+// int main()
+// {int SIZE;
+// scanf("%d",&SIZE);
+// int arr[SIZE]={0};
+// return 0;
+// }
+//是错误的：变长数组不允许定义的时候初始化
+
+//不推荐使用变长数组：编译器不一定支持c99而且考试的时候不给你用，而且移植性不好
+//变长数组示例
+//int a=6;
+//int A[a];
+
+//使用用户输入的值来确定数组的长度:就自己用动态数组,用malloc()函数
