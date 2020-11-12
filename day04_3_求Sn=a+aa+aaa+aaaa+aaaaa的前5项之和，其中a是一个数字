@@ -1,0 +1,12 @@
+//求Sn=a+aa+aaa+aaaa+aaaaa的前5项之和，其中a是一个数字
+//例如：2+22+222+2222+22222
+#include<stdio.h>
+int main()
+{
+    int a,Sn;
+    printf("求Sn=a+aa+aaa+aaaa+aaaaa的前5项之和，其中a是一个数字:");
+    scanf("%d",&a);
+    Sn=a+(a*10+a)+(a*100+a*10+a)+(a*1000+a*100+a*10+a)+(a*10000+a*1000+a*100+a*10+a);
+    printf("前5项之和为%d",Sn);
+    return 0;
+}
