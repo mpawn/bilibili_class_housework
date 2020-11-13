@@ -1,0 +1,32 @@
+//实现一个函数，判断一个数是不是素数
+#include<stdio.h>
+
+int sushu(int i)
+{
+    if(i>7)
+        {
+        if (i%2!=0  &&  i%3!=0  &&  i%5!=0  &&  i%7!=0)
+            //一个数同时对2 3 5 7取余不为0则这个数为素数
+            return 1;
+        else
+            return 0;
+        }
+    else if(i==2||i==5||i==7)
+        return 1;
+    else
+        return 0;
+}
+
+int main()
+{
+    int in,out;
+    printf("判断一个数是不是素数，请输入一个数：>");
+    scanf("%d",&in);
+    out=sushu(in);
+
+    if(out)
+        printf("%d是素数",in);
+    else
+        printf("%d不是素数",in);   
+    return 0;    
+}
