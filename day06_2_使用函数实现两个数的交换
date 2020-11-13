@@ -1,0 +1,39 @@
+//使用函数实现两个数的交换
+#include<stdio.h>
+
+void jiaohuan(int* a, int* b)
+{
+    int* c=&c;
+    *c=*a;
+    *a=*b;
+    *b=*c;
+    //return语句不能直接返回多个值
+}
+
+int main()
+{
+    int a,b,c=0;
+    printf("使用函数实现两个数的交换,请输入两个数");
+    scanf("%d%d",&a,&b);
+    jiaohuan(&a,&b);
+
+    printf("%d  %d",a,b);
+    return 0;
+}
+
+// 以类型指针方式传递函数参数
+//代码示例
+// #include <stdio.h>
+// void func(int* a, int* b)
+// {
+//  *a = 2;
+//  *b = 3;
+// }
+// int main()
+// {
+//  int a = 0;
+//  int b = 0;
+//  func(&a, &b);
+//  printf("%d %d\n", a, b);
+//  return 0;
+// }
