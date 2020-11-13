@@ -1,0 +1,96 @@
+/*创建一个数组，
+
+实现函数init（）初始化数组、
+
+实现empty（）清空数组、
+
+实现reverse（）函数完成数组元素的逆置。
+
+要求：自己设计函数的参数，返回值。*/
+
+#include <stdio.h>
+
+void init(int* arr, int length)//int* arr传递一个数组的地址过去，便于函数直接访问内存数据
+
+{
+
+ int i = 0;
+
+ for (i = 0; i<length; i++)
+
+ {
+
+ arr[i] = i;
+
+ }
+
+}
+
+//int *arr[4]；   表示一个数组 它里面存放了多个某种类型的指针
+
+//int (*arr)[4]； 表示一个指针 它指向了多个元素的某种类型的数组
+
+//int * arr : 函数首地址，常识 ：int arr[0] 等价于 int arr[] 等价于 int *arr
+
+//int len ： 当数组作为参数时，编译器并不知道数组的总数，所以需要传递数组的元素总数，避免数组越界。
+
+void empty(int* arr, int length)//清空数组
+
+{
+
+ int i;
+
+ for (i = 0; i<length; i++)
+
+ {arr[i] = 0;}  
+
+}
+
+
+void reverse(int* arr, int length)//交换数组的常见方法：将最后一位提出来，将最初放到最后，再把提出来的放到最初
+
+{
+
+ int tmp,i;
+
+ for (i = 0; i<length / 2; i++)
+
+ {
+
+ tmp = arr[length - i - 1];
+
+ arr[length - i - 1] = arr[i];
+
+ arr[i] = tmp;
+
+ }
+
+}
+
+
+int main()
+
+
+{
+
+ int arr[10];
+
+ int length = sizeof(arr) / sizeof(arr[10]);
+
+ init(arr, length);
+
+ printf_(arr, length);
+
+ reverse(arr, length);
+
+ printf_(arr, length);
+
+ empty(arr, length);
+
+ printf_(arr, length);
+
+ return 0;
+
+}
+
+
