@@ -1,0 +1,55 @@
+
+
+//写一个递归函数DigitSum(n)，输入一个非负整数，返回组成它的数字之和
+
+//例如，调用DigitSum(1729)，则应该返回1+7+2+9，它的和是19
+
+#include <stdio.h>
+
+ 
+
+int DigitSum(int n)
+
+{
+
+    if(n>=0&&n<=9)
+
+    return n;//跳出递归
+
+ 
+
+    int sum,m,i;
+
+    sum=n%10;//个位数搞出来
+
+    sum+=DigitSum(n/10);
+
+    return sum;
+
+}
+
+ 
+
+int main()
+
+{
+
+    int in,out;
+
+    printf("输入一个非负整数，本程序会返回组成它的数字之和：>");
+
+    scanf("%d",&in);//scanf必须要有&！！！！！！！！！！！！！
+
+ 
+
+    out=DigitSum(in);
+
+ 
+
+    printf("%d",out);
+
+    
+
+    return 0;
+
+}
