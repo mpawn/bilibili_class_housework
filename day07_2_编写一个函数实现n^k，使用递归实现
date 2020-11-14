@@ -1,0 +1,41 @@
+//编写一个函数实现n^k，使用递归实现
+
+#include <stdio.h>
+
+
+int NK(int n, int k)
+
+{
+
+    int out;
+
+    if(k==0)
+
+    return 1;
+
+    out=n*NK(n,k-1);
+
+    return out;
+
+}
+
+
+int main()
+
+{
+
+    int n,k,out;
+
+
+    printf("本程序计算n^k的结果，请输入n和k：>");
+
+    scanf("%d%d",&n,&k);
+
+
+    out=NK(n,k);
+
+    printf("n^k的结果是%d",out);
+
+    return 0;
+
+}
